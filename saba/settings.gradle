@@ -1,3 +1,4 @@
 rootProject.name = 'saba'
-include 'saba-core'
+include 'saba-application'
+include 'saba-infrastructure'
 
