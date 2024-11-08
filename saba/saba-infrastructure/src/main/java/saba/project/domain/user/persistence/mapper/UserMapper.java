@@ -12,6 +12,7 @@ public class UserMapper {
                 .accountId(userEntity.getAccountId())
                 .password(userEntity.getPassword())
                 .profileImage(userEntity.getProfileImage())
+                .authority(userEntity.getAuthority())
                 .build();
     }
 
@@ -21,6 +22,7 @@ public class UserMapper {
                 .accountId(user.getAccountId())
                 .password(user.getPassword())
                 .profileImage(user.getProfileImage())
+                .authority(user.getAuthority())
                 .build();
     }
 }

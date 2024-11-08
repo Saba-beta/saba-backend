@@ -1,10 +1,10 @@
-package saba.project.global.security.auth.domain;
+package saba.project.domain.auth.persistence;
 
-import jakarta.persistence.Entity;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 import org.springframework.data.redis.core.TimeToLive;
+import saba.example.domain.auth.model.Authority;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -13,12 +13,16 @@ import org.springframework.data.redis.core.TimeToLive;
 @RedisHash("refresh_token")
 public class RefreshTokenEntity {
     @Id
-    private String accountId;
+    private String userId;
 
     private String refreshToken;
 
+    private Authority authority;
+
     @TimeToLive
     private Long expiration;
+
+
 
     public RefreshTokenEntity updateExpiration(Long expiration) {
         this.expiration = expiration;

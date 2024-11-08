@@ -8,29 +8,31 @@ import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
-import saba.project.global.security.auth.domain.RefreshTokenEntity;
-import saba.project.global.security.auth.domain.repository.RefreshTokenRepository;
-import saba.project.global.security.dto.TokenResponse;
-
+import saba.example.domain.auth.dto.TokenResponse;
+import saba.example.domain.auth.model.Authority;
+import saba.example.domain.auth.model.RefreshToken;
+import saba.project.domain.auth.persistence.repository.RefreshTokenRepository;
+import java.time.LocalDateTime;
 import java.util.Date;
-
+// TODO Jwt예외 처리하기
 @RequiredArgsConstructor
 @Component
 public class JwtTokenProvider { // token 공급자
 
-
     private final JwtProperties jwtProperties;
     private final RefreshTokenRepository refreshTokenRepository;
     // 토큰 생성
-    public TokenResponse createToken(String accountId) {
+    public TokenResponse createToken(String accountId, Authority authority) {
         return TokenResponse
                 .builder()
-                .accessToken(createAccessToken(accountId))
-                .refreshToken(createRefreshToken(accountId))
+                .accessToken(createAccessToken(accountId, authority))
+                .accessExpiresTime(LocalDateTime.now().plusSeconds(jwtProperties.getRefreshExp()))
+                .refreshToken(createRefreshToken(accountId, authority))
+                .refreshExpiresTime(LocalDateTime.now().plusSeconds(jwtProperties.getRefreshExp()))
                 .build();
     }
 
-    public String createAccessToken(String accountId) {
+    public String createAccessToken(String accountId, Authority authority) {
         Claims claims = Jwts.claims().setSubject(accountId);
         Date now = new Date();
         return Jwts.builder()
@@ -38,26 +40,29 @@ public class JwtTokenProvider { // token 공급자
                 .setIssuedAt(now)
                 .setExpiration(new Date(now.getTime() + jwtProperties.getAccessExp() * 1000))
                 .signWith(SignatureAlgorithm.HS256, jwtProperties.getSecretKey())
+                .claim("authority",authority)
                 .compact();
 
     }
-    private String createRefreshToken(String accountId) {
+    private String createRefreshToken(String userId, Authority authority) {
 
         Date now = new Date();
 
         String refreshToken = Jwts.builder()
-                .setSubject(accountId)
+                .setSubject(userId)
                 .claim("type", "refresh")
                 .setIssuedAt(now)
                 .setExpiration(new Date(now.getTime() + jwtProperties.getRefreshExp() * 1000))
                 .signWith(SignatureAlgorithm.HS512, jwtProperties.getSecretKey())
+                .claim("authority",authority)
                 .compact();
 
         refreshTokenRepository.save(
-                RefreshTokenEntity.builder()
-                        .accountId(accountId)
+                RefreshToken.builder()
+                        .userId(userId)
                         .refreshToken(refreshToken)
                         .expiration(jwtProperties.getRefreshExp())
+                        .authority(authority)
                         .build());
 
         return refreshToken;

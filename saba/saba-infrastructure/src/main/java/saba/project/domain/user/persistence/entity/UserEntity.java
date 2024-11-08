@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import saba.example.domain.auth.model.Authority;
 
 @Entity
 @NoArgsConstructor
@@ -25,4 +26,7 @@ public class UserEntity {
 
     @Column(name = "profile_image")
     private String profileImage;
+
+    @Enumerated(value = EnumType.STRING)
+    private Authority authority;
 }

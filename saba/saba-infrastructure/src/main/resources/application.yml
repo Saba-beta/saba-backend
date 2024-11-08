@@ -20,10 +20,10 @@ spring:
   jackson:
     property-naming-strategy: SNAKE_CASE
 
-#  redis:
-#    host: ${REDIS_HOST}
-#    port: ${REDIS_PORT}
-#    password: ${REDIS_PASSWORD}
+redis:
+    host: ${REDIS_HOST}
+    port: ${REDIS_PORT}
+    password: ${REDIS_PASSWORD}
 
 jwt:
   header: ${JWT_HEADER:Authorization}
