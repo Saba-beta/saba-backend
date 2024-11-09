@@ -11,8 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 import saba.example.domain.auth.dto.TokenResponse;
 import saba.example.domain.auth.model.Authority;
 import saba.project.global.security.auth.AuthDetailsService;
-import saba.project.global.security.exception.InvalidTokenException;
-import saba.project.global.security.exception.NotRefreshTokenException;
+import saba.example.domain.auth.exception.InvalidTokenException;
+import saba.example.domain.auth.exception.NotRefreshTokenException;
 
 @RequiredArgsConstructor
 @Service

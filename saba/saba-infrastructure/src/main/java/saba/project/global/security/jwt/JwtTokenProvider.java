@@ -12,11 +12,10 @@ import saba.example.domain.auth.dto.TokenResponse;
 import saba.example.domain.auth.model.Authority;
 import saba.example.domain.auth.model.RefreshToken;
 import saba.project.domain.auth.persistence.repository.RefreshTokenRepository;
-import saba.project.global.security.exception.InvalidTokenException;
+import saba.example.domain.auth.exception.InvalidTokenException;
 
 import java.time.LocalDateTime;
 import java.util.Date;
-// TODO Jwt예외 처리하기
 @RequiredArgsConstructor
 @Component
 public class JwtTokenProvider { // token 공급자
