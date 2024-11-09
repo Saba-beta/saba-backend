@@ -1,7 +1,7 @@
-package saba.project.global.security.exception;
+package saba.example.domain.auth.exception;
 
 import saba.example.common.error.SabaException;
-import saba.project.global.security.exception.error.SecurityErrorCode;
+import saba.example.domain.auth.exception.error.SecurityErrorCode;
 
 public class InvalidTokenException extends SabaException {
     public static final SabaException EXCEPTION = new InvalidTokenException();

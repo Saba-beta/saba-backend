@@ -1,4 +1,4 @@
-package saba.project.global.security.exception.error;
+package saba.example.domain.auth.exception.error;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
