@@ -31,7 +31,6 @@ jwt:
   secret_key: ${JWT_SECRET:asdf}
   access_exp: ${TOKEN_ACCESS_EXP:60000}
   refresh_exp: ${TOKEN_REFRESH_EXP:120960}
-
 cloud:
   aws:
     credentials:

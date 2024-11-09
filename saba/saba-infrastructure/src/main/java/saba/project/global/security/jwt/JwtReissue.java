@@ -13,6 +13,7 @@ import saba.example.domain.auth.dto.TokenResponse;
 import saba.example.domain.auth.model.Authority;
 import saba.project.global.security.auth.AuthDetailsService;
 import saba.project.global.security.exception.InvalidTokenException;
+import saba.project.global.security.exception.NotRefreshTokenException;
 
 @RequiredArgsConstructor
 @Service
@@ -25,7 +26,7 @@ public class JwtReissue {
     public TokenResponse reissue(String refreshToken, Authority authority) {
 
         if(!isRefreshToken(refreshToken)) {
-            throw new JwtException("not refreshToken");
+            throw new NotRefreshTokenException();
         }
 
         String accountId = getId(refreshToken);
@@ -49,9 +50,7 @@ public class JwtReissue {
                     .parseClaimsJws(token)
                     .getBody();
         } catch (InvalidTokenException e) {
-            throw new InvalidTokenException();
-        } catch (Exception e) {
-            throw new InvalidTokenException();
+            throw InvalidTokenException.EXCEPTION;
         }
     }
 
