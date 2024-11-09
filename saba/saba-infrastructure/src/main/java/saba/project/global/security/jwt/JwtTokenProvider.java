@@ -12,6 +12,8 @@ import saba.example.domain.auth.dto.TokenResponse;
 import saba.example.domain.auth.model.Authority;
 import saba.example.domain.auth.model.RefreshToken;
 import saba.project.domain.auth.persistence.repository.RefreshTokenRepository;
+import saba.project.global.security.exception.InvalidTokenException;
+
 import java.time.LocalDateTime;
 import java.util.Date;
 // TODO Jwt예외 처리하기
@@ -79,12 +81,12 @@ public class JwtTokenProvider { // token 공급자
         return null;
     }
 
-    // 파싱 진행
+    // 본문 Claims 추출
     private Claims getBody(String token) {
         try {
             return Jwts.parser().setSigningKey(jwtProperties.getSecretKey()).parseClaimsJws(token).getBody();
         } catch (ExpiredJwtException e) {
-            throw new RuntimeException();
+            throw InvalidTokenException.EXCEPTION;
         }
     }
 
@@ -92,7 +94,7 @@ public class JwtTokenProvider { // token 공급자
     public void validateToken(String jwtToken) {
         Claims body = getBody(jwtToken);
         if (body.getExpiration().before(new Date())) {
-            throw new RuntimeException();
+            throw InvalidTokenException.EXCEPTION;
         }
     }
 
