@@ -27,7 +27,7 @@ redis:
 
 jwt:
   header: ${JWT_HEADER:Authorization}
-  prefix: ${JWT_PREFIX:Bearer }
+  prefix: ${JWT_PREFIX:Bearer}
   secret_key: ${JWT_SECRET:asdf}
   access_exp: ${TOKEN_ACCESS_EXP:60000}
   refresh_exp: ${TOKEN_REFRESH_EXP:120960}

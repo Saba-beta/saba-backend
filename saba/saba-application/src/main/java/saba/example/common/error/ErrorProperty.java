@@ -1,6 +1,6 @@
 package saba.example.common.error;
 
 public interface ErrorProperty {
-    HttpStatus getHttpStatus();
+    CustomHttpStatus getHttpStatus();
     String getMessage();
 }

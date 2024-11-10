@@ -13,9 +13,10 @@ import saba.example.domain.auth.model.Authority;
 @Getter
 @Builder
 @AllArgsConstructor
+// TODO 이미지 테이블 분리 고려
 public class UserEntity {
     @Id
-    private Long id;
+    private String id;
 
     @Column(name = "account_id", columnDefinition = "VARCHAR(30)")
     private String accountId;
