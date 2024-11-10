@@ -15,7 +15,6 @@ import saba.example.domain.auth.model.Authority;
 @AllArgsConstructor
 public class UserEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "account_id", columnDefinition = "VARCHAR(30)")

@@ -6,4 +6,5 @@ public interface SecurityPort {
     User getCurrentUser();
     String encodePassword(String password);
     boolean isPasswordMatch(String rawPassword, String encodedPassword);
+    void isUserExist(String accountId);
 }

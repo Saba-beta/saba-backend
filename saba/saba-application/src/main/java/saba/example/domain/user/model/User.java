@@ -9,7 +9,7 @@ import saba.example.domain.auth.model.Authority;
 @Getter
 @Builder(toBuilder = true)
 public class User {
-    private Long id;
+    private String id;
 
     private String accountId;
 
@@ -18,6 +18,8 @@ public class User {
     private String profileImage;
 
     private Authority authority;
+
+    private String email;
 
     public User changeAccountId(String accountId){
         return this.toBuilder()
