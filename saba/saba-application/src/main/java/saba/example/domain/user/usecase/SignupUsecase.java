@@ -20,8 +20,7 @@ public class SignupUsecase {
     private final SecurityPort securityPort;
 
     public TokenResponse execute(SignupRequest request){
-        securityPort.isUserExist(request
-                .getAccountId());
+        securityPort.isUserExist(request.getAccountId());
         User user = User.builder()
                 .id(UUID.randomUUID().toString()) // 유저 id는 UUID로 저장
                 .accountId(request.getAccountId())
