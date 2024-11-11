@@ -1,7 +1,12 @@
 package saba.example.domain.auth.spi;
 
-public interface EmailPort {
-    void makeRandomNumber();
+import jakarta.mail.internet.MimeMessage;
 
-    String sendMail(String email);
+public interface EmailPort {
+    void createNumber();
+
+    MimeMessage createMail(String mail);
+
+    int sendMail(String mail);
+
 }

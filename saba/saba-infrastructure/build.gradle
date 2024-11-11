@@ -36,6 +36,8 @@ dependencies {
 
     // email
     implementation 'javax.mail:mail:1.4.7'
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+
 }
 
 test {

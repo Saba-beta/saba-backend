@@ -1,4 +1,4 @@
-package saba.example.domain.auth.persistence;
+package saba.example.domain.auth.persistence.entity;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;

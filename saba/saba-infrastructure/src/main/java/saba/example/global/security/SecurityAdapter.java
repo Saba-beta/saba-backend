@@ -3,6 +3,7 @@ package saba.example.global.security;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
+import saba.example.common.annotation.Adapter;
 import saba.example.common.spi.SecurityPort;
 import saba.example.domain.auth.exception.UserAlreadyExistException;
 import saba.example.domain.user.model.User;
@@ -10,7 +11,7 @@ import saba.example.domain.user.persistence.entity.UserEntity;
 import saba.example.domain.user.persistence.mapper.UserMapper;
 import saba.example.domain.user.persistence.repository.UserRepository;
 
-@Component
+@Adapter
 @RequiredArgsConstructor
 public class SecurityAdapter implements SecurityPort {
     private final UserRepository userRepository;
