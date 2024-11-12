@@ -15,7 +15,7 @@ public class JwtAdapter implements JwtPort {
     private final JwtTokenProvider jwtTokenProvider;
 
     /**
-     * @return refresh 토큰 만료 시간
+     *  @return refresh 토큰 만료 시간
      */
     @Override
     public LocalDateTime getRefreshExpExpiredAt() {
