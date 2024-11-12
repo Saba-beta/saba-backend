@@ -10,12 +10,18 @@ import saba.example.domain.auth.spi.EmailPort;
 
 // TODO 코드 리펙토링 고려하기
 @Adapter
-@RequiredArgsConstructor
 public class EmailAdapter implements EmailPort {
+
+
+    public EmailAdapter(JavaMailSender javaMailSender, EmailProperties emailProperties) {
+        this.javaMailSender = javaMailSender;
+        this.emailProperties = emailProperties;
+        this.senderEmail = emailProperties.getUsername();
+    }
 
     private final JavaMailSender javaMailSender;
     private final EmailProperties emailProperties;
-    private final String senderEmail= emailProperties.getPassword();
+    private final String senderEmail;
     private static int number;
 
     public void createNumber(){

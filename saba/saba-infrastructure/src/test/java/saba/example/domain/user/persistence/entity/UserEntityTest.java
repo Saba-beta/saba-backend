@@ -20,5 +20,4 @@ class UserEntityTest {
 
         Assertions.assertThat(user.getAccountId()).isEqualTo("testMan1");
     }
-
 }
