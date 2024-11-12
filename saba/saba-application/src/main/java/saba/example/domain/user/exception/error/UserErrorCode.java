@@ -6,10 +6,10 @@ import saba.example.common.error.ErrorProperty;
 import saba.example.common.error.CustomHttpStatus;
 
 @RequiredArgsConstructor
-@Component
 public enum UserErrorCode implements ErrorProperty{
     USER_NOT_FOUND(CustomHttpStatus.NOT_FOUND, "유저를 찾을 수 없습니다."),
     USER_INVALID(CustomHttpStatus.UNAUTHORIZED, "비밀번호가 유효하지 않습니다.");
+
     private final CustomHttpStatus httpStatus;
     private final String message;
 

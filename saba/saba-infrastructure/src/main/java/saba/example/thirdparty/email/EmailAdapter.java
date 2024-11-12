@@ -1,14 +1,14 @@
 package saba.example.thirdparty.email;
 
+import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
-import lombok.RequiredArgsConstructor;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.stereotype.Service;
 import saba.example.common.annotation.Adapter;
+import saba.example.domain.auth.exception.EmailSendFailedException;
 import saba.example.domain.auth.spi.EmailPort;
 
 
-// TODO 코드 리펙토링 고려하기
+// TODO 코드 리펙토링 고려하기(코드가 구림)
 @Adapter
 public class EmailAdapter implements EmailPort {
 
@@ -41,17 +41,20 @@ public class EmailAdapter implements EmailPort {
             body += "<h1>" + number + "</h1>";
             body += "<h3>" + "감사합니다." + "</h3>";
             message.setText(body,"UTF-8", "html");
-        } catch (jakarta.mail.MessagingException e) {
-            throw new RuntimeException(e);
+        } catch (MessagingException e) {
+            throw EmailSendFailedException.EXCEPTION;
         }
-
         return message;
     }
 
     public int sendMail(String mail){
-        MimeMessage message = createMail(mail);
-        javaMailSender.send(message);
+        try {
+            MimeMessage message = createMail(mail);
+            javaMailSender.send(message);
+            return number;
+        } catch (RuntimeException e) {
+            throw EmailSendFailedException.EXCEPTION;
+        }
 
-        return number;
     }
 }

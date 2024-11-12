@@ -42,4 +42,9 @@ subprojects {
     test {
         useJUnitPlatform()
     }
+
+    springBoot {
+        mainClass = 'saba.example.SabaApplication'
+    }
+
 }

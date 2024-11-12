@@ -1,10 +1,10 @@
 package saba.example.common.error;
 
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 @Getter
 public enum CustomHttpStatus {
     OK(200),
@@ -21,7 +21,4 @@ public enum CustomHttpStatus {
 
     private final int statusCode;
 
-    CustomHttpStatus(int statusCode){
-        this.statusCode = statusCode;
-    }
 }
