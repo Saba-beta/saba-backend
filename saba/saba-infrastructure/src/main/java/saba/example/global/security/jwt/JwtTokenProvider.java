@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
-import saba.example.domain.auth.dto.response.TokenResponseApp;
+import saba.example.domain.auth.dto.response.TokenResponse;
 import saba.example.domain.auth.model.Authority;
 import saba.example.domain.auth.model.RefreshToken;
 import saba.example.domain.auth.persistence.repository.RefreshTokenRepository;
@@ -23,8 +23,8 @@ public class JwtTokenProvider { // token 공급자
     private final JwtProperties jwtProperties;
     private final RefreshTokenRepository refreshTokenRepository;
     // 토큰 생성
-    public TokenResponseApp createToken(String accountId, Authority authority) {
-        return TokenResponseApp
+    public TokenResponse createToken(String accountId, Authority authority) {
+        return TokenResponse
                 .builder()
                 .accessToken(createAccessToken(accountId, authority))
                 .accessExpiresTime(LocalDateTime.now().plusSeconds(jwtProperties.getRefreshExp()))

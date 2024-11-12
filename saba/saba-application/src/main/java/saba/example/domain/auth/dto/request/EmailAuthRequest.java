@@ -5,6 +5,6 @@ import lombok.Getter;
 
 @Getter
 @Builder
-public class EmailAuthRequestApp {
+public class EmailAuthRequest {
     private String email;
 }

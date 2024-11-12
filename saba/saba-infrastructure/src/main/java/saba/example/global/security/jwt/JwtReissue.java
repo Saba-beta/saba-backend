@@ -8,7 +8,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import saba.example.domain.auth.dto.response.TokenResponseApp;
+import saba.example.domain.auth.dto.response.TokenResponse;
 import saba.example.domain.auth.model.Authority;
 import saba.example.global.security.auth.AuthDetailsService;
 import saba.example.domain.auth.exception.InvalidTokenException;
@@ -23,7 +23,7 @@ public class JwtReissue {
     private final JwtProperties jwtProperties;
     private final AuthDetailsService authDetailsService;
 
-    public TokenResponseApp reissue(String refreshToken, Authority authority) {
+    public TokenResponse reissue(String refreshToken, Authority authority) {
 
         if(!isRefreshToken(refreshToken)) {
             throw new NotRefreshTokenException();
@@ -31,7 +31,7 @@ public class JwtReissue {
 
         String accountId = getId(refreshToken);
 
-        return TokenResponseApp.builder()
+        return TokenResponse.builder()
                 // 토큰 제작
                 .accessToken(jwtTokenProvider.createAccessToken(accountId, authority))
                 .refreshToken(refreshToken)

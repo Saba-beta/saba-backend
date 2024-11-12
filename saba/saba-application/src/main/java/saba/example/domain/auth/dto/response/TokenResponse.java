@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Builder
-public class TokenResponseApp {
+public class TokenResponse {
     private final String accessToken;
     private final LocalDateTime accessExpiresTime;
     private final String refreshToken;

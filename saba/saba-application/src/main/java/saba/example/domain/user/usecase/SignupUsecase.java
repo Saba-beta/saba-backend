@@ -3,7 +3,7 @@ package saba.example.domain.user.usecase;
 import lombok.RequiredArgsConstructor;
 import saba.example.common.annotation.UseCase;
 import saba.example.common.spi.SecurityPort;
-import saba.example.domain.auth.dto.response.TokenResponseApp;
+import saba.example.domain.auth.dto.response.TokenResponse;
 import saba.example.domain.auth.spi.JwtPort;
 import saba.example.domain.user.dto.request.SignupRequest;
 import saba.example.domain.user.model.User;
@@ -19,7 +19,7 @@ public class SignupUsecase {
     private final UserQueryPort userRegisterPort;
     private final SecurityPort securityPort;
 
-    public TokenResponseApp execute(SignupRequest request){
+    public TokenResponse execute(SignupRequest request){
         securityPort.isUserExist(request.getAccountId());
         User user = User.builder()
                 .id(UUID.randomUUID().toString()) // 유저 id는 UUID로 저장

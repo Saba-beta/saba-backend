@@ -4,8 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import saba.example.domain.auth.presentation.dto.mapper.EmailAuthMapper;
-import saba.example.domain.auth.presentation.dto.request.EmailAuthRequestInfra;
+import saba.example.domain.auth.dto.request.EmailAuthRequest;
 import saba.example.domain.auth.usecase.EmailAuthUseCase;
 
 @RestController
@@ -13,12 +12,11 @@ import saba.example.domain.auth.usecase.EmailAuthUseCase;
 @RequestMapping("/auth")
 public class EmailAuthWebAdapter {
     private final EmailAuthUseCase emailAuthUseCase;
-    private final EmailAuthMapper emailAuthMapper;
 
     @PostMapping("/email")
-    public int emailAuthentication(EmailAuthRequestInfra mail){
+    public int emailAuthentication(EmailAuthRequest mail){
 
 
-        return emailAuthUseCase.execute(emailAuthMapper.toApp(mail));
+        return emailAuthUseCase.execute(mail);
     }
 }
