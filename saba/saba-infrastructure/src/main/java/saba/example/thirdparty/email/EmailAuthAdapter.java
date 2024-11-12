@@ -12,7 +12,7 @@ import saba.example.domain.auth.spi.EmailAuthPort;
 // TODO 코드 리펙토링 고려하기(코드가 구림)
 @Adapter
 @RequiredArgsConstructor
-public class EmailAuthAuthAdapter implements EmailAuthPort {
+public class EmailAuthAdapter implements EmailAuthPort {
 
 
 

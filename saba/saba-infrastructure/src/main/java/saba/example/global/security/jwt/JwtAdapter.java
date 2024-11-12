@@ -1,9 +1,8 @@
 package saba.example.global.security.jwt;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 import saba.example.common.annotation.Adapter;
-import saba.example.domain.auth.dto.response.TokenResponse;
+import saba.example.domain.auth.dto.response.TokenResponseApp;
 import saba.example.domain.auth.model.Authority;
 import saba.example.domain.auth.spi.JwtPort;
 
@@ -25,7 +24,7 @@ public class JwtAdapter implements JwtPort {
     }
 
     @Override
-    public TokenResponse createToken(String userId, Authority authority) {
+    public TokenResponseApp createToken(String userId, Authority authority) {
         return jwtTokenProvider.createToken(userId, authority);
     }
 }
