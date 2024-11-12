@@ -2,6 +2,7 @@ package saba.example.global.security;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import saba.example.common.annotation.Adapter;
 import saba.example.common.spi.SecurityPort;
@@ -16,6 +17,7 @@ import saba.example.domain.user.persistence.repository.UserRepository;
 public class SecurityAdapter implements SecurityPort {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public User getCurrentUser() {
@@ -32,7 +34,7 @@ public class SecurityAdapter implements SecurityPort {
 
     @Override
     public boolean isPasswordMatch(String rawPassword, String encodedPassword) {
-        return false;
+        return passwordEncoder.matches(rawPassword, encodedPassword);
     }
 
     @Override

@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Getter
 @Configuration
-public class EmailProperties {
+public class EmailAuthProperties {
     @Value("${cloud.mail.username}")
     private String username;
     @Value("${cloud.mail.password}")

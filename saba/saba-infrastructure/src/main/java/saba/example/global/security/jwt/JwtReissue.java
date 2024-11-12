@@ -17,6 +17,7 @@ import saba.example.domain.auth.exception.NotRefreshTokenException;
 @RequiredArgsConstructor
 @Service
 @Transactional
+// TODO Security 부분 좀 마음에 안드는데 리펙토링 하자(특히 Reissue랑 TokenProvider 합치는 부분 고려)
 public class JwtReissue {
     private final JwtTokenProvider jwtTokenProvider;
     private final JwtProperties jwtProperties;
