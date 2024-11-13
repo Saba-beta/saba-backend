@@ -37,6 +37,10 @@ subprojects {
         compileOnly 'org.projectlombok:lombok'
         annotationProcessor 'org.projectlombok:lombok'
         implementation 'org.locationtech.jts:jts-core:1.18.2'
+
+        implementation 'jakarta.validation:jakarta.validation-api:3.0.2' // 최신 버전 사용 권장
+        implementation 'org.hibernate.validator:hibernate-validator:8.0.0.Final' // 실제 구현체
+
     }
 
     test {

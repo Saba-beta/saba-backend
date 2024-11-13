@@ -13,21 +13,12 @@ import saba.example.domain.auth.spi.EmailAuthPort;
 @Adapter
 @RequiredArgsConstructor
 public class EmailAuthAdapter implements EmailAuthPort {
-
-
-
     private final JavaMailSender javaMailSender;
     private final EmailAuthProperties emailAuthProperties;
-    private static int number;
-
-    public void createNumber(){
-        number = (int)(Math.random() * (90000)) + 100000;// (int) Math.random() * (최댓값-최소값+1) + 최소값
-    }
-
-
 
     public int sendMail(String mail){
-        createNumber();
+        int number = (int)(Math.random() * (90000)) + 100000;// (int) Math.random() * (최댓값-최소값+1) + 최소값
+
         MimeMessage message = javaMailSender.createMimeMessage();
 
         try {
