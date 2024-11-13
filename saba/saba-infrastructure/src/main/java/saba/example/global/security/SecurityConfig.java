@@ -19,7 +19,6 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @RequiredArgsConstructor
 public class SecurityConfig {
-
     private final ObjectMapper objectMapper;
     private final ApplicationEventPublisher eventPublisher;
 

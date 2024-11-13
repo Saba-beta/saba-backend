@@ -21,7 +21,6 @@ public class RedisConfig {
     @Value("${redis.host}")
     private String host;
 
-
     @Bean
     public RedisConnectionFactory redisConnectionFactory() {
         RedisStandaloneConfiguration configuration = new RedisStandaloneConfiguration(host, port);

@@ -15,8 +15,6 @@ public class EmailAuthWebAdapter {
 
     @PostMapping("/email")
     public int emailAuthentication(EmailAuthRequest mail){
-
-
         return emailAuthUseCase.execute(mail);
     }
 }
