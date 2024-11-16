@@ -11,7 +11,6 @@ import saba.example.domain.user.spi.UserQueryPort;
 
 import java.util.UUID;
 
-//TODO 이메일 인증 추가하기 (회원 가입 요청 전 이메일 인증 해야하는 걸로)
 @RequiredArgsConstructor
 @UseCase
 public class SignupUsecase {

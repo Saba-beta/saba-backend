@@ -6,7 +6,6 @@ import io.swagger.v3.oas.models.info.Info;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-// TODO 추가되는 Controller에 Swagger 기능 추가하기
 public class SwaggerConfig {
     public OpenAPI openAPI(){
         return new OpenAPI()
