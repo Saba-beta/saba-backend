@@ -3,7 +3,7 @@ package saba.example.domain.user.model;
 import lombok.Builder;
 import lombok.Getter;
 import saba.example.common.annotation.Aggregate;
-import saba.example.domain.auth.model.Authority;
+import saba.example.domain.auth.model.type.Authority;
 // TODO 집 주소 추가 고려하기
 @Aggregate
 @Getter

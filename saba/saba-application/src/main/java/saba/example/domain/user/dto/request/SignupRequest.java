@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Builder;
 import lombok.Getter;
-import saba.example.domain.auth.model.Authority;
+import saba.example.domain.auth.model.type.Authority;
 
 @Builder
 @Getter

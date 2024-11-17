@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import saba.example.domain.auth.model.Authority;
+import saba.example.domain.auth.model.type.Authority;
 
 @Entity
 @NoArgsConstructor

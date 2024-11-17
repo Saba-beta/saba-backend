@@ -1,7 +1,7 @@
 package saba.example.domain.auth.spi;
 
 import saba.example.domain.auth.dto.response.TokenResponse;
-import saba.example.domain.auth.model.Authority;
+import saba.example.domain.auth.model.type.Authority;
 
 import java.time.LocalDateTime;
 

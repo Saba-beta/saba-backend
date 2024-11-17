@@ -3,7 +3,7 @@ package saba.example.global.security.jwt;
 import lombok.RequiredArgsConstructor;
 import saba.example.common.annotation.Adapter;
 import saba.example.domain.auth.dto.response.TokenResponse;
-import saba.example.domain.auth.model.Authority;
+import saba.example.domain.auth.model.type.Authority;
 import saba.example.domain.auth.spi.JwtPort;
 
 import java.time.LocalDateTime;

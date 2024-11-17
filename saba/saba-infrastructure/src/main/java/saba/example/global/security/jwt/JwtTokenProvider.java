@@ -9,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import saba.example.domain.auth.dto.response.TokenResponse;
-import saba.example.domain.auth.model.Authority;
+import saba.example.domain.auth.model.type.Authority;
 import saba.example.domain.auth.model.RefreshToken;
 import saba.example.domain.auth.persistence.repository.RefreshTokenRepository;
 import saba.example.domain.auth.exception.InvalidTokenException;

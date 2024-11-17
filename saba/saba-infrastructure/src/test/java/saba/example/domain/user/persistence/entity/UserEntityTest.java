@@ -3,7 +3,7 @@ package saba.example.domain.user.persistence.entity;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import saba.example.domain.auth.model.Authority;
+import saba.example.domain.auth.model.type.Authority;
 import java.util.UUID;
 
 class UserEntityTest {

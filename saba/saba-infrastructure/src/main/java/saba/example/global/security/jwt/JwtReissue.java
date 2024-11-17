@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import saba.example.domain.auth.dto.response.TokenResponse;
-import saba.example.domain.auth.model.Authority;
+import saba.example.domain.auth.model.type.Authority;
 import saba.example.global.security.auth.AuthDetailsService;
 import saba.example.domain.auth.exception.InvalidTokenException;
 import saba.example.domain.auth.exception.NotRefreshTokenException;
