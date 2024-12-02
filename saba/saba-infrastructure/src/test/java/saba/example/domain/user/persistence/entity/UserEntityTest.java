@@ -15,7 +15,7 @@ class UserEntityTest {
                 .authority(Authority.DEFAULT)
                 .accountId("testMan1")
                 .password("fjwae3290rjji")
-                .profileImage("")
+                .profileImageUrl("")
                 .build();
 
         Assertions.assertThat(user.getAccountId()).isEqualTo("testMan1");

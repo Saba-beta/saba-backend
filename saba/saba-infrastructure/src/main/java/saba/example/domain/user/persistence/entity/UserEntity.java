@@ -13,7 +13,6 @@ import saba.example.domain.auth.model.type.Authority;
 @Getter
 @Builder
 @AllArgsConstructor
-// TODO 이미지 테이블 분리 고려
 public class UserEntity {
     @Id
     private String id;
@@ -24,8 +23,8 @@ public class UserEntity {
     @Column(columnDefinition = "VARCHAR(60)")
     private String password;
 
-    @Column(name = "profile_image")
-    private String profileImage;
+    @Column(name = "profile_image_url")
+    private String profileImageUrl;
 
     @Enumerated(value = EnumType.STRING)
     private Authority authority;
