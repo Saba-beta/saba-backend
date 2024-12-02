@@ -16,7 +16,6 @@ public class Company {
     private Integer id;
     private String name;
     private String registrationNumber;
-    private String industryType;
 
     // address
     private String address;
@@ -24,15 +23,16 @@ public class Company {
     private String email;
 
     // information
+    private String industryType;
     private LocalDateTime foundedDate;
     private String ceoName;
     private Integer employeeCount;
     private Status status; // ACTIVE, INACTIVE
-    private String webUrl;
+    private String websiteUrl;
     private String logoUrl;
     private String descripteion;
 
-    // fixedDate
+    // date
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 }
