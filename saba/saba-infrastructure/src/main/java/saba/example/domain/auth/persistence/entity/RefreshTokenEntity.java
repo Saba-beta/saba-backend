@@ -22,8 +22,6 @@ public class RefreshTokenEntity {
     @TimeToLive
     private Long expiration;
 
-
-
     public RefreshTokenEntity updateExpiration(Long expiration) {
         this.expiration = expiration;
         return this;

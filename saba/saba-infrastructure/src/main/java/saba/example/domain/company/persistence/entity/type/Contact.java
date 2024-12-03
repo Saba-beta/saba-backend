@@ -1,6 +1,5 @@
 package saba.example.domain.company.persistence.entity.type;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -11,9 +10,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Address {
-    private String address;
-    @Column(name = "contact_number")
+public class Contact {
     private String contactNumber;
     private String email;
 }

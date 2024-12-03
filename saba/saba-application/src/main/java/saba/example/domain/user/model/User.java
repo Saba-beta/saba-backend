@@ -15,11 +15,12 @@ public class User {
 
     private String password;
 
-    private String profileImage;
-
     private Authority authority;
 
     private String email;
+
+    private String profileImage;
+
 
     public User changeAccountId(String accountId){
         return this.toBuilder()

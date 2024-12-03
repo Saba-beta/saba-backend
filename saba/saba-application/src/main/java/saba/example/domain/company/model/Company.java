@@ -4,33 +4,32 @@ import lombok.Builder;
 import lombok.Getter;
 import saba.example.common.annotation.Aggregate;
 import saba.example.domain.company.model.type.Status;
-
 import java.time.LocalDateTime;
 
 
-// TODO 컬럼 정의
 @Aggregate
 @Builder(toBuilder = true)
 @Getter
 public class Company {
-    private Integer id;
+
+    // basicInfo
     private String name;
     private String registrationNumber;
-
-    // address
     private String address;
-    private String contactNumber;
-    private String email;
+    private Status status; // ACTIVE, INACTIVE
 
-    // information
+    // details
     private String industryType;
     private LocalDateTime foundedDate;
     private String ceoName;
     private Integer employeeCount;
-    private Status status; // ACTIVE, INACTIVE
     private String websiteUrl;
     private String logoUrl;
     private String descripteion;
+
+    // contact
+    private String contactNumber;
+    private String email;
 
     // date
     private LocalDateTime createdAt;

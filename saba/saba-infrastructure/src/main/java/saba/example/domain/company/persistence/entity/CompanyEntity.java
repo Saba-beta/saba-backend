@@ -4,8 +4,10 @@ import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import saba.example.domain.company.persistence.entity.type.Address;
-import saba.example.domain.company.persistence.entity.type.Information;
+import saba.example.domain.company.persistence.entity.type.BasicInfo;
+import saba.example.domain.company.persistence.entity.type.Contact;
+import saba.example.domain.company.persistence.entity.type.Date;
+import saba.example.domain.company.persistence.entity.type.Details;
 
 @Entity
 @AllArgsConstructor
@@ -15,14 +17,12 @@ public class CompanyEntity {
     @Id
     private Integer id;
 
-    private String name;
-
-    @Column(name = "registration_number")
-    private String registrationNumber;
-
-    @Embedded
-    private Address address;
-
-    @Embedded
-    private Information information;
+    // basicInfo
+    private BasicInfo basicInfo;
+    // details
+    private Details details;
+    // contact
+    private Contact contact;
+    // date
+    private Date date;
 }
