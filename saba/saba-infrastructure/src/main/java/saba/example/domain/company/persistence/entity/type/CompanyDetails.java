@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Details {
+public class CompanyDetails {
     private String industryType;
     private LocalDateTime foundedDate;
     private String ceoName;
@@ -20,5 +20,4 @@ public class Details {
     private String websiteUrl;
     private String logoUrl;
     private String descripteion;
-
 }

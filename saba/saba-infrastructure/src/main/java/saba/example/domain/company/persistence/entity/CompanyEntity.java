@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import saba.example.domain.company.persistence.entity.type.BasicInfo;
 import saba.example.domain.company.persistence.entity.type.Contact;
 import saba.example.domain.company.persistence.entity.type.Date;
-import saba.example.domain.company.persistence.entity.type.Details;
+import saba.example.domain.company.persistence.entity.type.CompanyDetails;
 
 @Entity
 @AllArgsConstructor
@@ -17,12 +17,11 @@ public class CompanyEntity {
     @Id
     private Integer id;
 
-    // basicInfo
     private BasicInfo basicInfo;
-    // details
-    private Details details;
-    // contact
+
+    private CompanyDetails details;
+
     private Contact contact;
-    // date
+
     private Date date;
 }

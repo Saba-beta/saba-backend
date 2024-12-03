@@ -5,6 +5,8 @@ import lombok.Getter;
 import saba.example.common.annotation.Aggregate;
 import saba.example.domain.company.model.Company;
 import saba.example.domain.product.model.type.ProductType;
+
+import java.time.LocalDateTime;
 import java.util.List;
 
 import java.time.LocalDate;
@@ -13,19 +15,24 @@ import java.time.LocalDate;
 @Builder(toBuilder = true)
 @Getter
 public class Product {
-    private String pruductNumber;
+    private Long id;
 
-    //상품 정보
+    // productInfo
     private String productname;
     private ProductType type;
     private String origin;
     private Long prise;
     private List<String> productImageUrl;
 
-    // 등록 정보
+    // registrationInfo
     private LocalDate registrationAt;
     private Company company;
 
-    // 상세 정보
+    // detalils
     private List<String> DetailsImageUrl;
+    private String content;
+
+    // date
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 }
