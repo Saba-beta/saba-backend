@@ -11,10 +11,9 @@ import java.time.LocalDateTime;
 @Builder(toBuilder = true)
 @Getter
 public class Company {
-
+    private Long id;
     // basicInfo
     private String name;
-    private String registrationNumber;
     private String address;
     private Status status; // ACTIVE, INACTIVE
 
@@ -25,7 +24,7 @@ public class Company {
     private Integer employeeCount;
     private String websiteUrl;
     private String logoUrl;
-    private String descripteion;
+    private String description;
 
     // contact
     private String contactNumber;

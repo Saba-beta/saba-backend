@@ -2,10 +2,7 @@ package saba.example.domain.product.persistence.entity.type;
 
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Embeddable;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import saba.example.domain.product.model.type.ProductType;
 import java.util.List;
 
@@ -13,6 +10,7 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Builder
 public class ProductInfo {
     private String productname;
     private ProductType type;

@@ -1,10 +1,7 @@
 package saba.example.domain.product.persistence.entity.type;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import saba.example.domain.company.persistence.entity.CompanyEntity;
 import java.time.LocalDate;
 
@@ -12,6 +9,7 @@ import java.time.LocalDate;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Builder
 public class RegistrationInfo {
     private LocalDate registrationAt;
 

@@ -16,16 +16,12 @@ import saba.example.domain.auth.model.type.Authority;
 public class UserEntity {
     @Id
     private String id;
-
     @Column(name = "account_id", columnDefinition = "VARCHAR(30)")
     private String accountId;
-
     @Column(columnDefinition = "VARCHAR(60)")
     private String password;
-
     @Column(name = "profile_image_url")
     private String profileImageUrl;
-
     @Enumerated(value = EnumType.STRING)
     private Authority authority;
 }
