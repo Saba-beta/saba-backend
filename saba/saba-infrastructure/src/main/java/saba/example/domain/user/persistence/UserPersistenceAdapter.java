@@ -6,11 +6,11 @@ import saba.example.domain.user.exception.UserNotFoundException;
 import saba.example.domain.user.model.User;
 import saba.example.domain.user.persistence.mapper.UserMapper;
 import saba.example.domain.user.persistence.repository.UserRepository;
-import saba.example.domain.user.spi.UserQueryPort;
+import saba.example.domain.user.spi.UserPort;
 
 @Adapter
 @RequiredArgsConstructor
-public class userPersistenceAdapter implements UserQueryPort {
+public class userPersistenceAdapter implements UserPort {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
     @Override

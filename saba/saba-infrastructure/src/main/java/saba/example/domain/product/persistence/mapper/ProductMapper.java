@@ -1,6 +1,7 @@
 package saba.example.domain.product.persistence.mapper;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import saba.example.domain.company.persistence.entity.type.Date;
 import saba.example.domain.company.persistence.repository.CompanyJpaRepository;
@@ -30,8 +31,7 @@ public class ProductMapper {
                         .content(product.getContent())
                         .build())
                 .registration(RegistrationInfo.builder()
-                        .registrationAt(product.getRegistrationAt())
-                        .company(companyJpaRepository.getReferenceById(product.getCompanyId()))
+                        .registrationAt(product.getRegistrationAt()).company(companyJpaRepository.getReferenceById(product.getCompanyId()))
                         .build())
                 .date(Date.builder()
                         .createdAt(product.getCreatedAt())

@@ -12,8 +12,7 @@ import java.time.LocalDate;
 @Builder
 public class RegistrationInfo {
     private LocalDate registrationAt;
-
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "company_id")
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private CompanyEntity company;
 }

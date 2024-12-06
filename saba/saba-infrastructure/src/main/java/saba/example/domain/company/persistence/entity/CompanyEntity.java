@@ -6,6 +6,8 @@ import saba.example.domain.company.persistence.entity.type.BasicInfo;
 import saba.example.domain.company.persistence.entity.type.Contact;
 import saba.example.domain.company.persistence.entity.type.Date;
 import saba.example.domain.company.persistence.entity.type.CompanyDetails;
+import saba.example.domain.product.persistence.entity.ProductEntity;
+import java.util.*;
 
 @Entity
 @AllArgsConstructor
@@ -16,6 +18,8 @@ import saba.example.domain.company.persistence.entity.type.CompanyDetails;
 public class CompanyEntity {
     @Id
     private Long id;
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<ProductEntity> products;
     private BasicInfo basicInfo;
     private CompanyDetails details;
     private Contact contact;

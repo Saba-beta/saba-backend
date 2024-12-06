@@ -7,7 +7,7 @@ import saba.example.domain.auth.dto.response.TokenResponse;
 import saba.example.domain.auth.spi.JwtPort;
 import saba.example.domain.user.dto.request.SignupRequest;
 import saba.example.domain.user.model.User;
-import saba.example.domain.user.spi.UserQueryPort;
+import saba.example.domain.user.spi.UserPort;
 
 import java.util.UUID;
 
@@ -15,7 +15,7 @@ import java.util.UUID;
 @UseCase
 public class SignupUsecase {
     private final JwtPort jwtPort;
-    private final UserQueryPort userRegisterPort;
+    private final UserPort userPort;
     private final SecurityPort securityPort;
 
     public TokenResponse execute(SignupRequest request){
@@ -27,7 +27,7 @@ public class SignupUsecase {
                 .password(request.getPassword())
                 .email(request.getEmail())
                 .build();
-        userRegisterPort.save(user);
+        userPort.save(user);
 
         return jwtPort.createToken(user.getId(), user.getAuthority());
     }
