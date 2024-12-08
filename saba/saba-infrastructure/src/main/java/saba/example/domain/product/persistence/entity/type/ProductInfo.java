@@ -12,7 +12,7 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
 public class ProductInfo {
-    private String productname;
+    private String productName;
     private ProductType type;
     private String origin;
     private Long prise;

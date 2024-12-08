@@ -20,9 +20,11 @@ public class ProductEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_id")
     private Long id;
+
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_id", foreignKey = @ForeignKey(name = "fk_company_product"))
+    @JoinColumn(name = "company_id", foreignKey = @ForeignKey(name = "fk_company_product"))
     private CompanyEntity company;
+
     @Embedded
     private ProductInfo productInfo;
     @Embedded
