@@ -12,7 +12,5 @@ import java.time.LocalDate;
 @Builder
 public class RegistrationInfo {
     private LocalDate registrationAt;
-    @JoinColumn(name = "company_id")
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private CompanyEntity company;
+
 }

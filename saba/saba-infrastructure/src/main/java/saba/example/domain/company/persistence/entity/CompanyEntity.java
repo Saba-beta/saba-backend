@@ -17,8 +17,10 @@ import java.util.*;
 @Getter
 public class CompanyEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "company_id")
     private Long id;
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "company")
     private List<ProductEntity> products;
     private BasicInfo basicInfo;
     private CompanyDetails details;

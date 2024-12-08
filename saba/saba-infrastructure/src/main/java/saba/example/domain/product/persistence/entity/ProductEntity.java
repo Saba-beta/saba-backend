@@ -16,9 +16,13 @@ import saba.example.domain.product.persistence.entity.type.RegistrationInfo;
 @Builder
 @Getter
 public class ProductEntity {
-
     @Id
-    private Long id;;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "product_id")
+    private Long id;
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id", foreignKey = @ForeignKey(name = "fk_company_product"))
+    private CompanyEntity company;
     @Embedded
     private ProductInfo productInfo;
     @Embedded

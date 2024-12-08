@@ -20,6 +20,7 @@ public class ProductMapper {
         return ProductEntity
                 .builder()
                 .id(product.getId())
+                .company(companyJpaRepository.getReferenceById(product.getCompanyId()))
                 .productInfo(ProductInfo.builder()
                         .productImageUrl(product.getProductImageUrl())
                         .prise(product.getPrice())
@@ -31,7 +32,6 @@ public class ProductMapper {
                         .content(product.getContent())
                         .build())
                 .registration(RegistrationInfo.builder()
-                        .registrationAt(product.getRegistrationAt()).company(companyJpaRepository.getReferenceById(product.getCompanyId()))
                         .build())
                 .date(Date.builder()
                         .createdAt(product.getCreatedAt())
@@ -49,7 +49,7 @@ public class ProductMapper {
                 .detailsImageUrl(productEntity.getDetails().getDetailsImageUrl())
                 .content(productEntity.getDetails().getContent())
                 .registrationAt(productEntity.getRegistration().getRegistrationAt())
-                .companyId(productEntity.getRegistration().getCompany().getId()) // Company 객체의 ID 추출
+                .companyId(productEntity.getCompany().getId()) // Company 객체의 ID 추출
                 .createdAt(productEntity.getDate().getCreatedAt())
                 .updatedAt(productEntity.getDate().getUpdatedAt())
                 .build();
