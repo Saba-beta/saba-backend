@@ -7,6 +7,7 @@ import saba.example.domain.user.persistence.entity.UserEntity;
 @Component
 public class UserMapper {
     public User toDomain(UserEntity userEntity){
+
         return User.builder()
                 .id(userEntity.getId())
                 .accountId(userEntity.getAccountId())

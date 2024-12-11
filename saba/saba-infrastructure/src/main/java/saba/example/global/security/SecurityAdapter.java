@@ -29,7 +29,7 @@ public class SecurityAdapter implements SecurityPort {
 
     @Override
     public String encodePassword(String password) {
-        return null;
+        return passwordEncoder.encode(password);
     }
 
     @Override

@@ -24,7 +24,7 @@ public class SignupUsecase {
                 .id(UUID.randomUUID().toString()) // 유저 id는 UUID로 저장
                 .accountId(request.getAccountId())
                 .authority(request.getAuthority())
-                .password(request.getPassword())
+                .password(securityPort.encodePassword(request.getPassword()))
                 .email(request.getEmail())
                 .build();
         userPort.save(user);

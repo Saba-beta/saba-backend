@@ -21,10 +21,12 @@ public class userPersistenceAdapter implements UserPort {
 
     @Override
     public User getByAccountId(String accountId) {
-        User user = userMapper.toDomain(userRepository.findByAccountId(accountId));
-        if (user == null){
+        try{
+            return userMapper.toDomain(userRepository.findByAccountId(accountId));
+        }catch(Exception e){
             throw UserNotFoundException.EXCEPTION;
+
         }
-        return user;
+
     }
 }

@@ -11,6 +11,7 @@ import org.springframework.util.StringUtils;
 import saba.example.domain.auth.dto.response.TokenResponse;
 import saba.example.domain.auth.model.type.Authority;
 import saba.example.domain.auth.model.RefreshToken;
+import saba.example.domain.auth.persistence.entity.RefreshTokenEntity;
 import saba.example.domain.auth.persistence.repository.RefreshTokenRepository;
 import saba.example.domain.auth.exception.InvalidTokenException;
 
@@ -59,7 +60,7 @@ public class JwtTokenProvider { // token 공급자
                 .compact();
 
         refreshTokenRepository.save(
-                RefreshToken.builder()
+                RefreshTokenEntity.builder()
                         .userId(userId)
                         .refreshToken(refreshToken)
                         .expiration(jwtProperties.getRefreshExp())
