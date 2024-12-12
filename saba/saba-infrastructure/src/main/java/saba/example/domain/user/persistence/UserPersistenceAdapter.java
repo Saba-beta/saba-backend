@@ -10,7 +10,7 @@ import saba.example.domain.user.spi.UserPort;
 
 @Adapter
 @RequiredArgsConstructor
-public class userPersistenceAdapter implements UserPort {
+public class UserPersistenceAdapter implements UserPort {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
     @Override
