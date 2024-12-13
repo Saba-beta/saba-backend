@@ -10,7 +10,7 @@ import lombok.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Builder
-public class Addres {
+public class Address {
     @NotNull
     @Column(columnDefinition = "VARCHAR(50)")
     private String mainAddress;

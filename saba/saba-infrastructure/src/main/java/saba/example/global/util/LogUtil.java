@@ -8,7 +8,6 @@ import java.io.StringWriter;
 
 @NoArgsConstructor
 public class LogUtil {
-
     public static String stackTraceToString(Exception exception) {
         StringWriter stringWriter = new StringWriter();
         PrintWriter printWriter = new PrintWriter(stringWriter);

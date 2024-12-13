@@ -1,6 +1,8 @@
 package saba.example.domain.company.persistence.entity.type;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import saba.example.domain.company.model.type.Status;
 
@@ -10,7 +12,9 @@ import saba.example.domain.company.model.type.Status;
 @AllArgsConstructor
 @Builder
 public class BasicInfo {
+    @Column(columnDefinition = "VARCHAR(30)")
+    @NotNull
     private String name;
-    private String address;
+    @NotNull
     private Status status; // ACTIVE, INACTIVE
 }

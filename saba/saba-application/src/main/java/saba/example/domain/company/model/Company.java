@@ -1,5 +1,6 @@
 package saba.example.domain.company.model;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Getter;
 import saba.example.common.annotation.Aggregate;
@@ -12,9 +13,9 @@ import java.time.LocalDateTime;
 @Getter
 public class Company {
     private Long id;
+
     // basicInfo
     private String name;
-    private String address;
     private Status status; // ACTIVE, INACTIVE
 
     // details
@@ -33,4 +34,9 @@ public class Company {
     // date
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+
+    // address
+    private String mainAddress;
+    private String mainAddressDetail;
+    private String mainZipCode;
 }

@@ -6,8 +6,7 @@ import saba.example.domain.company.spi.CompanyPort;
 
 @UseCase
 @RequiredArgsConstructor
-public class RegistCompany {
+public class RegisterCompany {
     private final CompanyPort companyPort;
-
 
 }
