@@ -32,5 +32,9 @@ public class User {
                 .build();
     }
 
-
+    public void changeProfileImage(String image){
+        this.toBuilder()
+                .profileImage(image)
+                .build();
+    }
 }
