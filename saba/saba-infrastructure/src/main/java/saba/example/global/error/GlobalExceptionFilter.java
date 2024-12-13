@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.filter.OncePerRequestFilter;
 import saba.example.common.error.ErrorProperty;
 import saba.example.common.error.SabaException;
@@ -20,6 +21,7 @@ import java.io.IOException;
 
 @Slf4j
 @RequiredArgsConstructor
+@ControllerAdvice
 public class GlobalExceptionFilter extends OncePerRequestFilter {
 
     private final ObjectMapper objectMapper;

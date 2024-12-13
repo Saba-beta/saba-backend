@@ -9,6 +9,7 @@ public class SabaException extends RuntimeException{
     private final ErrorProperty errorProperty;
 
     public SabaException(ErrorProperty errorProperty) {
+        super(errorProperty.getMessage());
         this.errorProperty = errorProperty;
     }
 }
